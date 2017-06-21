@@ -184,7 +184,7 @@ class Bot:
 			}
 		}, notification_type)
 
-	def send_button_message(self, recipient_id, text, buttons, notification_type=NotificationType.regular):
+	def send_button_message(self, recipient_id, text, buttons):
 		"""Send text messages to the specified recipient.
 		https://developers.facebook.com/docs/messenger-platform/send-api-reference/button-template
 		Input:
@@ -203,7 +203,7 @@ class Bot:
 					"buttons": buttons
 				}
 			}
-		}, notification_type)
+		})
 
 	def send_action(self, recipient_id, action):
 		"""Send typing indicators or send read receipts to the specified recipient.
