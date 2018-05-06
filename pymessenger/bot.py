@@ -243,6 +243,18 @@ class Bot:
 		"""
 		return self.send_attachment_url(recipient_id, "image", image_url, notification_type)
 
+	def send_image_id(self, recipient_id, image_id, notification_type=None):
+		"""Send an image to specified recipient using URL.
+		Image must be PNG or JPEG or GIF (more might be supported).
+		https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment
+		Input:
+			recipient_id: recipient id to send to
+			image_url: attachment id of image to be sent
+		Output:
+			Response from API as <dict>
+		"""
+		return self.send_attachment_id(recipient_id, "image", image_id, notification_type)
+
 	def send_audio(self, recipient_id, audio_path):
 		"""Send audio to the specified recipient.
 		Audio must be MP3 or WAV
@@ -330,6 +342,17 @@ class Bot:
 			Response from API as <dict>
 		"""
 		return self.send_attachment_url(recipient_id, "file", file_url, notification_type)
+
+	def send_file_id(self, recipient_id, file_id, notification_type=None):
+		"""Send file to the specified recipient.
+		https://developers.facebook.com/docs/messenger-platform/send-api-reference/file-attachment
+		Input:
+			recipient_id: recipient id to send to
+			file_id: attachemnt id of file to be sent
+		Output:
+			Response from API as <dict>
+		"""
+		return self.send_attachment_id(recipient_id, "file", file_id, notification_type)
 
 	def get_user_info(self, recipient_id, fields=None):
 		"""Getting information about the user
