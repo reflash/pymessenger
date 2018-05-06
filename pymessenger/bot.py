@@ -219,7 +219,7 @@ class Bot:
 			'sender_action': action
 		})
 
-	def send_image(self, recipient_id, image_path, notification_type=NotificationType.regular):
+	def send_image(self, recipient_id, image_path, notification_type=None):
 		"""Send an image to the specified recipient.
 		Image must be PNG or JPEG or GIF (more might be supported).
 		https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment
@@ -231,7 +231,7 @@ class Bot:
 		"""
 		return self.send_attachment(recipient_id, "image", image_path, notification_type)
 
-	def send_image_url(self, recipient_id, image_url, notification_type=NotificationType.regular):
+	def send_image_url(self, recipient_id, image_url, notification_type=None):
 		"""Send an image to specified recipient using URL.
 		Image must be PNG or JPEG or GIF (more might be supported).
 		https://developers.facebook.com/docs/messenger-platform/send-api-reference/image-attachment
@@ -309,7 +309,7 @@ class Bot:
 		"""
 		return self.send_attachment_url(recipient_id, "video", video_url, notification_type)
 
-	def send_file(self, recipient_id, file_path, notification_type=NotificationType.regular):
+	def send_file(self, recipient_id, file_path, notification_type=None):
 		"""Send file to the specified recipient.
 		https://developers.facebook.com/docs/messenger-platform/send-api-reference/file-attachment
 		Input:
@@ -320,7 +320,7 @@ class Bot:
 		"""
 		return self.send_attachment(recipient_id, "file", file_path, notification_type)
 
-	def send_file_url(self, recipient_id, file_url, notification_type=NotificationType.regular):
+	def send_file_url(self, recipient_id, file_url, notification_type=None):
 		"""Send file to the specified recipient.
 		https://developers.facebook.com/docs/messenger-platform/send-api-reference/file-attachment
 		Input:
