@@ -165,7 +165,7 @@ class Bot:
 				'text': message, 'quick_replies': quick_replies
 			})
 
-	def send_generic_message(self, recipient_id, elements, notification_type=NotificationType.regular):
+	def send_generic_message(self, recipient_id, elements, notification_type=None):
 		"""Send generic messages to the specified recipient.
 		https://developers.facebook.com/docs/messenger-platform/send-api-reference/generic-template
 		Input:
@@ -182,7 +182,7 @@ class Bot:
 					"elements": elements
 				}
 			}
-		}, notification_type)
+		})
 
 	def send_button_message(self, recipient_id, text, buttons):
 		"""Send text messages to the specified recipient.
